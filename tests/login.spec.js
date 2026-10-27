@@ -4,7 +4,7 @@ test.describe('Login',()=>{
     test.beforeEach(async({page})=>{
         await page.goto('/');
     });
-    test('valid user lands on the products page',async({page})=>{
+    test('valid user lands on the products page',{ tag: '@smoke' }, async({page})=>{
         await page.getByPlaceholder('Username').fill('standard_user');
         await page.getByPlaceholder('Password').fill('secret_sauce');
         await page.getByRole('button',{name:'Login'}).click();
